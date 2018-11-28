@@ -92,3 +92,70 @@ SnippetSerializer():
     style = ChoiceField(choices=[('abap', 'abap'), ('algol', 'algol'), ('algol_nu', 'algol_nu'), ('arduino', 'arduino'), ('autumn', 'autumn'), ('borland', 'borland'), ('bw', 'bw'), ('colorful', 'colorful'), ('default', 'default'), ('emacs', 'emacs'), ('friendly', 'friendly'), ('fruity', 'fruity'), ('igor', 'igor'), ('lovelace', 'lovelace'), ('manni', 'manni'), ('monokai', 'monokai'), ('murphy', 'murphy'), ('native', 'native'), ('paraiso-dark', 'paraiso-dark'), ('paraiso-light', 'paraiso-light'), ('pastie', 'pastie'), ('perldoc', 'perldoc'), ('rainbow_dash', 'rainbow_dash'), ('rrt', 'rrt'), ('tango', 'tango'), ('trac', 'trac'), ('vim', 'vim'), ('vs', 'vs'), ('xcode', 'xcode')], required=False)
 ```
 ### [Writing regular Django views using our Serializer](https://www.django-rest-framework.org/tutorial/1-serialization/#writing-regular-django-views-using-our-serializer)
+### [Testing our first attempt at a Web API](https://www.django-rest-framework.org/tutorial/1-serialization/#testing-our-first-attempt-at-a-web-api)
+```
+python manage.py runserver
+```
+```
+pip install httpie
+pip freeze > req.txt
+```
+```
+http http://127.0.0.1:8000/snippets/
+```
+```
+HTTP/1.1 200 OK
+Content-Length: 352
+Content-Type: application/json
+Date: Wed, 28 Nov 2018 05:34:57 GMT
+Server: WSGIServer/0.2 CPython/3.6.6
+X-Frame-Options: SAMEORIGIN
+
+[
+    {
+        "code": "foo = \"bar\"\n",
+        "id": 1,
+        "language": "python",
+        "linenos": false,
+        "style": "friendly",
+        "title": ""
+    },
+    {
+        "code": "print \"hello, world\"\n",
+        "id": 2,
+        "language": "python",
+        "linenos": false,
+        "style": "friendly",
+        "title": ""
+    },
+    {
+        "code": "print \"hello, world\"",
+        "id": 3,
+        "language": "python",
+        "linenos": false,
+        "style": "friendly",
+        "title": ""
+    }
+]
+```
+```
+http http://127.0.0.1:8000/snippets/2/
+```
+```
+HTTP/1.1 200 OK
+Content-Length: 119
+Content-Type: application/json
+Date: Wed, 28 Nov 2018 05:38:38 GMT
+Server: WSGIServer/0.2 CPython/3.6.6
+X-Frame-Options: SAMEORIGIN
+
+{
+    "code": "print \"hello, world\"\n",
+    "id": 2,
+    "language": "python",
+    "linenos": false,
+    "style": "friendly",
+    "title": ""
+}
+
+```
