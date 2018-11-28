@@ -160,20 +160,13 @@ X-Frame-Options: SAMEORIGIN
 
 ```
 ## [Tutorial 2: Requests and Responses](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#tutorial-2-requests-and-responses)
-
-###[Request objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#request-objects)
-
-###[Response objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#response-objects)
-
-###[Status codes](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#status-codes)
-
-###[Wrapping API views](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#wrapping-api-views)
-
-###[Pulling it all together](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#pulling-it-all-together)
-
-###[Adding optional format suffixes to our URLs](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#adding-optional-format-suffixes-to-our-urls)
-
-###[How's it looking?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#hows-it-looking)
+### [Request objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#request-objects)
+### [Response objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#response-objects)
+### [Status codes](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#status-codes)
+### [Wrapping API views](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#wrapping-api-views)
+### [Pulling it all together](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#pulling-it-all-together)
+### [Adding optional format suffixes to our URLs](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#adding-optional-format-suffixes-to-our-urls)
+### [How's it looking?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#hows-it-looking)
 ```
 http http://127.0.0.1:8000/snippets/
 
@@ -231,6 +224,10 @@ http --json POST http://127.0.0.1:8000/snippets/ code="print 456"
     "style": "friendly"
 }
 ```
-###[Browsability](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#browsability)
+### [Browsability](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#browsability)
+### [What's next?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#whats-next)
 
-###[What's next?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#whats-next)
+## [Tutorial 3: Class-based Views](https://www.django-rest-framework.org/tutorial/3-class-based-views/)
+### [Rewriting our API using class-based views](https://www.django-rest-framework.org/tutorial/3-class-based-views/#rewriting-our-api-using-class-based-views)
+### [Using mixins](https://www.django-rest-framework.org/tutorial/3-class-based-views/#using-mixins)
+### [Using generic class-based views](https://www.django-rest-framework.org/tutorial/3-class-based-views/#using-generic-class-based-views)
