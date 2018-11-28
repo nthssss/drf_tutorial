@@ -160,12 +160,77 @@ X-Frame-Options: SAMEORIGIN
 
 ```
 ## [Tutorial 2: Requests and Responses](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#tutorial-2-requests-and-responses)
+
 ###[Request objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#request-objects)
+
 ###[Response objects](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#response-objects)
+
 ###[Status codes](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#status-codes)
+
 ###[Wrapping API views](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#wrapping-api-views)
+
 ###[Pulling it all together](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#pulling-it-all-together)
+
 ###[Adding optional format suffixes to our URLs](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#adding-optional-format-suffixes-to-our-urls)
+
 ###[How's it looking?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#hows-it-looking)
+```
+http http://127.0.0.1:8000/snippets/
+
+HTTP/1.1 200 OK
+...
+[
+  {
+    "id": 1,
+    "title": "",
+    "code": "foo = \"bar\"\n",
+    "linenos": false,
+    "language": "python",
+    "style": "friendly"
+  },
+  {
+    "id": 2,
+    "title": "",
+    "code": "print \"hello, world\"\n",
+    "linenos": false,
+    "language": "python",
+    "style": "friendly"
+  }
+]
+```
+```
+http http://127.0.0.1:8000/snippets/ Accept:application/json  # Request JSON
+http http://127.0.0.1:8000/snippets/ Accept:text/html         # Request HTML
+```
+```
+http http://127.0.0.1:8000/snippets.json  # JSON suffix
+http http://127.0.0.1:8000/snippets.api   # Browsable API suffix
+```
+```
+# POST using form data
+http --form POST http://127.0.0.1:8000/snippets/ code="print 123"
+
+{
+  "id": 3,
+  "title": "",
+  "code": "print 123",
+  "linenos": false,
+  "language": "python",
+  "style": "friendly"
+}
+
+# POST using JSON
+http --json POST http://127.0.0.1:8000/snippets/ code="print 456"
+
+{
+    "id": 4,
+    "title": "",
+    "code": "print 456",
+    "linenos": false,
+    "language": "python",
+    "style": "friendly"
+}
+```
 ###[Browsability](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#browsability)
+
 ###[What's next?](https://www.django-rest-framework.org/tutorial/2-requests-and-responses/#whats-next)
